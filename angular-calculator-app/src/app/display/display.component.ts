@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { keyframes } from '@angular/animations';
+import { Component, KeyValueDiffers, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  keys: string|undefined;
+  keys: string|undefined = '';
 
   constructor(private appService: AppService) { }
 
@@ -15,11 +16,10 @@ export class DisplayComponent implements OnInit {
     // this.keys = this.appService.onkeyValueAdded();
     this.appService.keyAdded.subscribe(
       (keyValue: string) => {
-        console.log('in shere')
-        this.keys = keyValue;
+        console.log('in here')
+        this.keys = this.keys + keyValue;
       }
     )
-   
   }
 
 }

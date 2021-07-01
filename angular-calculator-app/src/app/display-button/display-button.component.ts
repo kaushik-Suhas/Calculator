@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./display-button.component.css']
 })
 export class DisplayButtonComponent implements OnInit {
-  keys:string[] = ['1','2','3','+','4','5','6','-','7','8','9','*','/','0','C','='];
+  keys:string[] = ['1','2','3','+','4','5','6','-','7','8','9','*','/','0','C','.','='];
 
   constructor() { }
 
