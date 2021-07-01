@@ -13,4 +13,6 @@ export class ButtonElementsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick() {}
+
 }

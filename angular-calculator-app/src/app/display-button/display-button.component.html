@@ -1,5 +1,9 @@
-<div>
-    <br>
-    <br>
-    <app-button-elements *ngFor="let keyValue of keys" [keyValue]="keyValue"></app-button-elements>
+<div class="calculator">
+    <div class="container-md">
+        <div class="row align-items-start">
+            <div class="col-3 mx-auto">
+                <app-button-elements *ngFor="let keyValue of keys" [keyValue]="keyValue"></app-button-elements>
+            </div>
+        </div>
+    </div>
 </div>

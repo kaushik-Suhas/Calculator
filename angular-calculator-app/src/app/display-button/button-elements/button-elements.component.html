@@ -1,5 +1,14 @@
-<div>
+<div class="btn" >
     <div class="calculator-keys">
-        <button type="button" class="btn btn-primary">{{ keyValue }}</button>
+        <button 
+          class="btn btn-outline-primary
+          btn-lg 
+          text-dark font-weight-bold 
+          border border-dark border-2 rounded" 
+          [ngStyle]="{width: '50px'}"
+          (click)="onClick()" 
+          >
+        {{ keyValue }}
+        </button>
     </div>
 </div>
