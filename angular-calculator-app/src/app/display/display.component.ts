@@ -17,7 +17,19 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
     this.appService.keyAdded.subscribe((val: string) => {
       if (val == '+' || val == '-' || val == '*' || val == '/') {
-        this.operator = val;
+        if(this.operator) {
+          this.result = this.appService.calculation(this.key1, this.key2, this.operator)
+          this.key1 = this.result;
+          this.result = '';
+          this.operator = val;
+          this.key2 = '';
+        // } if (this.key1 = '') {
+        //   this.operator == '-'
+        //   this.key2 = this.operator + val;
+        } 
+        else {
+          this.operator = val;
+        } this.operator = val;
       } else if (!this.operator && val !== '=' && val !== 'C') {
         this.key1 = this.key1 + val;
       } else if (this.operator && val !== '=' && val !== 'C') {
@@ -33,11 +45,6 @@ export class DisplayComponent implements OnInit {
           this.key2 = '';
           this.result = '';
           this.operator = '';
-          console.log('here');
-      } else if (this.operator == val) {
-        this.key1 = this.result;
-        this.key2 = '';
-        console.log('here');
       }
     });
   }
