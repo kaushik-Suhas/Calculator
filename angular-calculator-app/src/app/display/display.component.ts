@@ -23,9 +23,6 @@ export class DisplayComponent implements OnInit {
           this.result = '';
           this.operator = val;
           this.key2 = '';
-        // } if (this.key1 = '') {
-        //   this.operator == '-'
-        //   this.key2 = this.operator + val;
         } 
         else {
           this.operator = val;

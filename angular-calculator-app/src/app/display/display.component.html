@@ -12,6 +12,9 @@
                 <div class="calculator">
                     <div class="calculator-screen" *ngIf="!key1 && !key2 && !operator">{{ 0 }}</div>
                     <div class="calculator-screen" *ngIf="!key1 && (operator !== '+') && (operator !== '/') && (operator !== '*')">{{ operator }}</div>
+                    <div class="calculator-screen" *ngIf="!key1 && !key2 && (operator == '+')">{{ 0 }}</div>
+                    <div class="calculator-screen" *ngIf="!key1 && !key2 && (operator == '/')">{{ 0 }}</div>
+                    <div class="calculator-screen" *ngIf="!key1 && !key2 && (operator == '*')">{{ 0 }}</div>
                     <div class="calculator-screen" *ngIf="key2 && !result">{{ key2 }}</div>
                     <div class="calculator-screen" *ngIf="!key2">{{ key1 }}</div>
                     <div class="calculator-screen" *ngIf="result">{{ result }}</div>
