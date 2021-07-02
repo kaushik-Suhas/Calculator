@@ -17,20 +17,25 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
     this.appService.keyAdded.subscribe((val: string) => {
       if (val == '+' || val == '-' || val == '*' || val == '/') {
-        if(this.operator) {
+        console.log('inside')
+        if(!this.key1 && val == '-'){
+          console.log('here')
+          this.key1 = this.key1 + val;
+        } else if(this.operator) {
           this.result = this.appService.calculation(this.key1, this.key2, this.operator)
           this.key1 = this.result;
           this.result = '';
           this.operator = val;
           this.key2 = '';
-        } 
-        else {
+        } else {
           this.operator = val;
-        } this.operator = val;
+        }
       } else if (!this.operator && val !== '=' && val !== 'C') {
+        console.log('inside key1')
         this.key1 = this.key1 + val;
       } else if (this.operator && val !== '=' && val !== 'C') {
         this.key2 = this.key2 + val;
+        console.log('inside key2')
       } else if (val == '=') {
         this.result = this.appService.calculation(
           this.key1,
