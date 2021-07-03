@@ -46,7 +46,14 @@ export class DisplayComponent implements OnInit {
         } 
         console.log(this.key1, 'key1')
       } else if (this.operator && val !== '=' && val !== 'C') {
-        this.key2 = this.key2 + val;
+         if( val == '0'){
+           if(this.key2 !== '0'){
+             this.key2 += val;
+           }
+         }else {
+          this.key2 = this.key2 + val;
+         }
+          
         console.log(this.key2, 'inside key2')
       } else if (val == '=') { console.log('in here') 
         this.result = this.appService.calculation(
